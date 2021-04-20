@@ -1,40 +1,11 @@
 'use strict';
+
+
+
 let arr = [];
 Person.all = [];
 
-function page1() {
-  arr = [];
-  Person.all = [];
-  $('.person-template').remove();
-  $('.dropDown').children().remove();
-  $.ajax('data/page-1.json').then(peopleData => {
-    peopleData.forEach(val => {
-      let newPerson = new Person(val);
-      newPerson.renderName();
-      arr.push(val.keyword);
-    })
-    // $('.person-template').first().remove();
-    arr = [...new Set(arr)];
-    renderOption();
-  })
-}
 
-function page2() {
-  arr = [];
-  Person.all = [];
-  $('.person-template').remove();
-  $('.dropDown').children().remove();
-  $.ajax('data/page-2.json').then(peopleData => {
-    peopleData.forEach(val => {
-      let newPerson = new Person(val);
-      newPerson.renderName();
-      arr.push(val.keyword);
-    })
-    // $('.person-template').first().remove();
-    arr = [...new Set(arr)];
-    renderOption();
-  })
-}
 function Person(name) {
   this.title = name.title;
   this.image_url = name.image_url;
@@ -50,6 +21,54 @@ Person.prototype.renderName = function () {
   $('main').append(dataSet)
 }
 
+
+
+
+//load first page1
+function page1() {
+  arr = [];
+  Person.all = [];
+  $('.person-template').remove();
+  $('.dropDown').children().remove();
+  $.ajax('data/page-1.json').then(peopleData => {
+    peopleData.forEach(val => {
+      let newPerson = new Person(val);
+      newPerson.renderName();
+      arr.push(val.keyword);
+    })
+    
+    arr = [...new Set(arr)];
+    renderOption();
+  })
+};//end of page1 function
+
+
+
+
+
+//load second page2
+function page2() {
+  arr = [];
+  Person.all = [];
+  $('.person-template').remove();
+  $('.dropDown').children().remove();
+  $.ajax('data/page-2.json').then(peopleData => {
+    peopleData.forEach(val => {
+      let newPerson = new Person(val);
+      newPerson.renderName();
+      arr.push(val.keyword);
+    })
+    
+    arr = [...new Set(arr)];
+    renderOption();
+  })
+};//end of page 2 function
+
+
+
+
+
+//to redner content of dropdown list
 const renderOption = function () {
   let Options = $('<option value="" class="" selected disabled>FilterByKeyWord</option>')
   $('#select').append(Options);
@@ -57,26 +76,38 @@ const renderOption = function () {
     Options = $('<option class = "option"></option>').text(item);
     $('#select').append(Options);
   });
-}
+};// end of render function
 
+
+
+
+
+//to toggle between keywords
 $('#select').on('change', function () {
   $('.person-template').hide();
   let x = `${$(this).val()}`;
   $(`.${x}`).show();
-})
+});//end of event
 
 
+
+
+
+//eventhandler to toggle between pages
 $('.b1').click(function () {
   $('.person-template').remove();
-
   page1();
-})
+});
+
 $('.b2').click(function () {
   page2();
-})
+});
+//end of events handlers
 
-page1();
 
+
+
+//to sort on horns
 function sort() {
   Person.all.sort((a, b) => {
     if (a.horns < b.horns) {
@@ -86,21 +117,12 @@ function sort() {
     } else {
       return 0;
     }
-  });
-  console.log(Person.all)
-}
-$('.sort').on('change', function (e) {
-  console.log('dd', e.target.value);
-  if (e.target.value == 'number')
-    sort();
-  else
-    title();
-  $('.person-template').remove();
-  Person.all.forEach(val => {
-    val.renderName();
-  })
-})
+  });   
+};//end of sort
 
+
+
+//to sort on keywords
 function title() {
   Person.all.sort((a, b) => {
     if (a.keyword.toUpperCase() < b.keyword.toUpperCase()) {
@@ -111,4 +133,27 @@ function title() {
       return 0;
     }
   });
-}
+};//end of title function
+
+
+
+
+//to toggle between sorting 
+$('.sort').on('change', function (e) {
+
+  if (e.target.value == 'number')
+    sort();
+  else
+    title();
+  $('.person-template').remove();
+  Person.all.forEach(val => {
+    val.renderName();
+  })
+});
+// end of event 
+
+
+
+
+//to show gallary for first page for first time
+page1();
