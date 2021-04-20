@@ -1,39 +1,63 @@
 <!DOCTYPE html>
- <html>
+<html>
 
- <head>
-     <title>galery</title>
-     <link rel="stylesheet" href="./css/reset.css" />
-     <link rel="stylesheet" href="./css/layouts.css" />
-     <link rel="stylesheet" href="./css/base.css">
-
- </head>
-
- <body>
-     <header>
-         <h1>Gallery</h1>
-     </header>
-     <div class="drop">
-        <select name=" " id="select" class="dropDown ">
-
-   </select>
-     </div>
-     <main>
+<head>
+    <title>Gallery Of Horns</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layouts.css" />
+    <link rel="stylesheet" href="./css/base.css">
 
 
-         <div class="person-template ">
-             <span class="ppl "></span>
-             <img src=" " alt=" ">
-             <p></p>
-             <p class="p1 "></p>
-             <div></div>
-         </div>
 
-     </main>
+    <script id='neighborhoodTemplate' type='text/x-tmpl-mustache'>
+        <div class="person-template {{keyword}}">
+            <p class="ss">{{keyword}}</p>
+          <span class="ppl ">{{title}}</span>
+          <img src="{{image_url}}" alt="">
+          <p>{{description}}</p>
+        <p class="p1 ">Number Of Horns:{{horns}}</p>
+          
+        </div>
+      </script>
 
-     <footer></footer>
-     <script src="https://code.jquery.com/jquery-3.6.0.js "></script>
-     <script src="./js/app.js "></script>
- </body>
+</head>
 
- </html>
+<body>
+    <header>
+        <h1>Gallery Of Horns</h1>
+        <div class="drop">
+        <div class="">
+            <select name=" " id="select" class="dropDown ">
+      </select>
+      <select name="" id="" class="sort">
+    
+        <option value="" class="" selected disabled>SortBy</option>
+
+     <option value="tile" class="">title</option>
+     <option value="number" class="">number of horns</option>
+
+ </select>
+</div>
+<div class="">
+     <button class="b1">Gallery1</button>
+     <button class="b2">Gallery2</button>
+    </div>
+
+   
+    
+    </div>
+
+</header>
+    <main>
+
+
+       
+    </main>
+
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+    <script src="./js/app.js "></script>
+</body>
+
+</html>
