@@ -1,38 +1,59 @@
-Number and name of feature: Feature #1: Display images
+Number and name of feature: Feature #1: Pagination
 
-Estimate of time needed to complete: 30 min
+Estimate of time needed to complete: 1 hour
 
-Start time: 8pm
+Start time: 5pm
 
-Finish time:8:30pm
+Finish time:6pm
 
 Actual time needed to complete:30min
 
 
 
 
-Number and name of feature: Feature #2: Filter images
+Number and name of feature: Feature #2: Templating
 
 Estimate of time needed to complete: 15min
 
-Start time: 8:30pm
+Start time: 6pm
 
-Finish time: 8:45pm
+Finish time: 6:15pm
 
 Actual time needed to complete: 15min
 
 
 
+Number and name of feature: Feature #3: Styling with Flexbox
 
 
-Number and name of feature: Feature #3: Style the application
+Estimate of time needed to complete: 1 hour
 
+Start time: 6:15pm
 
-Estimate of time needed to complete: 20min
-
-Start time: 8:45pm
-
-Finish time: 9:05pm
+Finish time: 7:15pm
 
 Actual time needed to complete: 20min
+
+
+
+
+
+
+Number and name of feature: Feature #4: Sort the images
+
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 7:15pm
+
+Finish time: 7:15pm
+
+Actual time needed to complete: 20min
+
+
+
+
+
+
+
 

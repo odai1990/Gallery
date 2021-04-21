@@ -125,9 +125,9 @@ function sort() {
 //to sort on keywords
 function title() {
   Person.all.sort((a, b) => {
-    if (a.keyword.toUpperCase() < b.keyword.toUpperCase()) {
+    if (a.title.toUpperCase() < b.title.toUpperCase()) {
       return 1;
-    } else if (a.keyword.toUpperCase() > b.keyword.toUpperCase()) {
+    } else if (a.title.toUpperCase() > b.title.toUpperCase()) {
       return -1;
     } else {
       return 0;
